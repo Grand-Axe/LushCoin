@@ -1,0 +1,52 @@
+﻿Search for and fix all occurences of Header.Bits
+
+ChainBehavior.cs, line 159
+                //@@@@@@ Do not remove this until a way has been found to fix tips if the blockchain is forked
+                //if(_PendingTip.ChainWork > Chain.Tip.ChainWork)
+                //{
+                //    Chain.SetTip(_PendingTip);
+                //}
+
+ChainedBlock.GetWorkRequired()
+Target
+Block.CheckProofOfWork()
+Network.InitMain() -- consensus.PowLimit = new Target(new uint256("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"));
+
+BlockrTransactionRepository.BroadcastAsync (BlockrTransactionRepository.cs)
+
+public Target GetWorkRequired(Consensus consensus) (ChainedBlock.cs)
+
+Target.ToBigInteger returns _Target
+
+Nonce
+	header.Nonce = (uint)resp.Result["nonce"]; (RPCClient.cs - private static BlockHeader ParseBlockHeader(RPCResponse resp))
+
+//FIXME: it needs to be changed when Gavin Andresen increase the max block size. (Block.cs - public class Block : IBitcoinSerializable)
+		public const uint MAX_BLOCK_SIZE = 1000 * 1000;
+ 
+Trace Network.GetReward
+-----------------------
+	Block.CreateNextBlockWithCoinbase (Block.cs)
+	Network.CreateGenesisBlock (Network.cs)
+	Network.GetReward (Network.cs)
+	NodeBuilder.Generate (NodeBuilder.cs)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+The "nonce" in a bitcoin block is a 32-bit (4-byte) field whose value is set so that the hash of the block will contain a run of leading zeros. 
+The rest of the fields may not be changed, as they have a defined meaning.
+
+Any change to the block data (such as the nonce) will make the block hash completely different. Since it is believed infeasible to predict which 
+combination of bits will result in the right hash, many different nonce values are tried, and the hash is recomputed for each value until a hash 
+containing the required number of zero bits is found. The number of zero bits required is set by the difficulty. The resulting hash has to be a 
+value less than the current difficulty and so will have to have a certain number of leading zero bits to be less than that. As this iterative 
+calculation requires time and resources, the presentation of the block with the correct nonce value constitutes proof of work.
+Golden Nonce
+
+A golden nonce in Bitcoin mining is a nonce which results in a hash value lower than the target difficulty. In many practical mining applications, 
+this is simplified to any nonce which has 32 leading zeroes[1], with a secondary test checking if the actual value is lower than the target difficulty.
+Etymology
+
+The term golden nonce most likely evolved from the term golden ticket as used to refer to a nonce satisfying the mining requirements as early as April 8th, 2011[2] 
+
+https://en.bitcoin.it/wiki/Nonce
+-----------------------------------------------------------------------------------------------------------------------------------------------

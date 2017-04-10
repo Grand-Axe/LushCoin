@@ -1,0 +1,22 @@
+﻿Nonce
+------
+	Changed nonce parameter to in code lines to 0 (second parameter)
+
+		Network.cs - (627, 14) : genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, Money.Coins(50m));
+		Network.cs - (703, 14) : genesis = CreateGenesisBlock(1296688602, 414098458, 0x1d00ffff, 1, Money.Coins(50m));
+		Network.cs - (753, 14) : genesis = CreateGenesisBlock(1296688602, 2, 0x207fffff, 1, Money.Coins(50m));
+
+	Commented out all instances of
+		Block.cs - (412 - 467) : CreateNextBlockWithCoinbase(...)
+
+	Renamed nNonce
+		Block.cs : to nGizmo
+
+	Renamed Nonce
+		Block.cs : to Gizmo
+
+uint Gizmo
+----------
+	Holds count for number of invention/innovation transactions in block
+
+========================================================================================================================================
