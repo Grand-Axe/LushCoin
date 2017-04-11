@@ -91,12 +91,6 @@ namespace LushCoin
 			return Tip.HashBlock == chain.Tip.HashBlock;
 		}
 
-
-        //public Target GetWorkRequired(Network network, int height)
-        //{
-        //    return GetBlock(height).GetWorkRequired(network);
-        //}
-
 		public bool Validate(Network network, bool fullChain = true)
 		{
 			var tip = Tip;

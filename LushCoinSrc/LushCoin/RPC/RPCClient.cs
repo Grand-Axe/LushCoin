@@ -609,7 +609,7 @@ namespace LushCoin.RPC
 		{
 			var header = new BlockHeader();
 			header.Version = (int)resp.Result["version"];
-			header.Gizmo = (uint)resp.Result["gizmo"];
+			header.Tally = (uint)resp.Result["tally"];
 			//header.Bits = new Target(Encoders.Hex.DecodeData((string)resp.Result["bits"]));
 			if(resp.Result["previousblockhash"] != null)
 			{

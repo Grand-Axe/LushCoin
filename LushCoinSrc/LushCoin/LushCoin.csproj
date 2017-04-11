@@ -67,11 +67,15 @@
     </Compile>
     <Compile Include="BitcoinCore\CachedBlockProvider.cs" />
     <Compile Include="BitWriter.cs" />
+    <Compile Include="BlockHeader.cs" />
     <Compile Include="BuilderExtensions\BuilderExtension.cs" />
     <Compile Include="BuilderExtensions\OPTrueExtension.cs" />
     <Compile Include="BuilderExtensions\P2MultiSigBuilderExtension.cs" />
     <Compile Include="BuilderExtensions\P2PKBuilderExtension.cs" />
     <Compile Include="BuilderExtensions\P2PKHBuilderExtension.cs" />
+    <Compile Include="Community.Extensions\Ratification.cs" />
+    <Compile Include="Consensus.cs" />
+    <Compile Include="Community.Extensions\EVec.cs" />
     <Compile Include="FeeRate.cs" />
     <Compile Include="JsonConverters\AssetIdJsonConverter.cs" />
     <Compile Include="JsonConverters\Base58JsonConverter.cs" />
@@ -442,9 +446,7 @@
     <Compile Include="BouncyCastle\util\io\Streams.cs" />
     <Compile Include="BouncyCastle\util\Platform.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Gizmo.Extensions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="ChangeLog.txt" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using LushCoin.BouncyCastle.Math;
+using LushCoin.Community.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,6 @@ namespace LushCoin
 				return phashBlock;
 			}
 		}
-
 
 		// pointer to the index of the predecessor of this block
 		ChainedBlock pprev;
@@ -57,15 +57,6 @@ namespace LushCoin
 			}
 		}
 
-        //BigInteger _ChainWork;
-        //public uint256 ChainWork
-        //{
-        //    get
-        //    {
-        //        return Target.ToUInt256(_ChainWork);
-        //    }
-        //}
-
 		public ChainedBlock(BlockHeader header, uint256 headerHash, ChainedBlock previous)
 		{
 			if(header == null)
@@ -91,24 +82,6 @@ namespace LushCoin
 			}
             //CalculateChainWork();
 		}
-
-        //private void CalculateChainWork()
-        //{
-        //    _ChainWork = (Previous == null ? BigInteger.Zero : Previous._ChainWork).Add(GetBlockProof());
-        //}
-
-        //static BigInteger Pow256 = BigInteger.ValueOf(2).Pow(256);
-        //private BigInteger GetBlockProof()
-        //{
-        //    var bnTarget = Header.Bits.ToBigInteger();
-        //    if(bnTarget.CompareTo(BigInteger.Zero) <= 0 || bnTarget.CompareTo(Pow256) >= 0)
-        //        return BigInteger.Zero;
-        //    // We need to compute 2**256 / (bnTarget+1), but we can't represent 2**256
-        //    // as it's too large for a arith_uint256. However, as 2**256 is at least as large
-        //    // as bnTarget+1, it is equal to ((2**256 - bnTarget - 1) / (bnTarget+1)) + 1,
-        //    // or ~bnTarget / (nTarget+1) + 1.
-        //    return ((Pow256.Subtract(bnTarget).Subtract(BigInteger.One)).Divide(bnTarget.Add(BigInteger.One))).Add(BigInteger.One);
-        //}
 
 		public ChainedBlock(BlockHeader header, int height)
 		{
@@ -172,8 +145,6 @@ namespace LushCoin
 			return phashBlock.GetHashCode();
 		}
 
-
-
 		public IEnumerable<ChainedBlock> EnumerateToGenesis()
 		{
 			var current = this;
@@ -212,94 +183,6 @@ namespace LushCoin
 			return currentBlock;
 		}
 
-        ////public Target GetWorkRequired(Network network)
-        ////{
-        ////    return GetWorkRequired(network.Consensus);
-        ////}
-
-        //public Target GetNextWorkRequired(Network network)
-        //{
-        //    return GetNextWorkRequired(network.Consensus);
-        //}
-        //public Target GetNextWorkRequired(Consensus consensus)
-        //{
-        //    BlockHeader dummy = new BlockHeader();
-        //    dummy.HashPrevBlock = this.HashBlock;
-        //    dummy.BlockTime = DateTimeOffset.UtcNow;
-        //    return GetNextWorkRequired(dummy, consensus);
-        //}
-
-        //public Target GetNextWorkRequired(BlockHeader block, Network network)
-        //{
-        //    return GetNextWorkRequired(block, network.Consensus);
-        //}
-
-        //public Target GetNextWorkRequired(BlockHeader block, Consensus consensus)
-        //{
-        //    return new ChainedBlock(block, block.GetHash(), this).GetWorkRequired(consensus);
-        //}
-
-        //public Target GetWorkRequired(Consensus consensus)
-        //{
-        //    // Genesis block
-        //    if(Height == 0)
-        //        return consensus.PowLimit;
-        //    var nProofOfWorkLimit = consensus.PowLimit;
-        //    var pindexLast = this.Previous;
-        //    var height = Height;
-
-        //    if(pindexLast == null)
-        //        return nProofOfWorkLimit;
-
-        //    // Only change once per interval
-        //    if((height) % consensus.DifficultyAdjustmentInterval != 0)
-        //    {
-        //        if(consensus.PowAllowMinDifficultyBlocks)
-        //        {
-        //            // Special difficulty rule for testnet:
-        //            // If the new block's timestamp is more than 2* 10 minutes
-        //            // then allow mining of a min-difficulty block.
-        //            if(this.Header.BlockTime > pindexLast.Header.BlockTime + TimeSpan.FromTicks(consensus.PowTargetSpacing.Ticks * 2))
-        //                return nProofOfWorkLimit;
-        //            else
-        //            {
-        //                // Return the last non-special-min-difficulty-rules-block
-        //                ChainedBlock pindex = pindexLast;
-        //                while(pindex.Previous != null && (pindex.Height % consensus.DifficultyAdjustmentInterval) != 0 && pindex.Header.Bits == nProofOfWorkLimit)
-        //                    pindex = pindex.Previous;
-        //                return pindex.Header.Bits;
-        //            }
-        //        }
-        //        return pindexLast.Header.Bits;
-        //    }
-
-        //    // Go back by what we want to be 14 days worth of blocks
-        //    var pastHeight = pindexLast.Height - (consensus.DifficultyAdjustmentInterval - 1);
-        //    ChainedBlock pindexFirst = this.EnumerateToGenesis().FirstOrDefault(o => o.Height == pastHeight);
-        //    assert(pindexFirst);
-
-        //    if(consensus.PowNoRetargeting)
-        //        return pindexLast.header.Bits;
-
-        //    // Limit adjustment step
-        //    var nActualTimespan = pindexLast.Header.BlockTime - pindexFirst.Header.BlockTime;
-        //    if(nActualTimespan < TimeSpan.FromTicks(consensus.PowTargetTimespan.Ticks / 4))
-        //        nActualTimespan = TimeSpan.FromTicks(consensus.PowTargetTimespan.Ticks / 4);
-        //    if(nActualTimespan > TimeSpan.FromTicks(consensus.PowTargetTimespan.Ticks * 4))
-        //        nActualTimespan = TimeSpan.FromTicks(consensus.PowTargetTimespan.Ticks * 4);
-
-        //    // Retarget
-        //    var bnNew = pindexLast.Header.Bits.ToBigInteger();
-        //    bnNew = bnNew.Multiply(BigInteger.ValueOf((long)nActualTimespan.TotalSeconds));
-        //    bnNew = bnNew.Divide(BigInteger.ValueOf((long)consensus.PowTargetTimespan.TotalSeconds));
-        //    var newTarget = new Target(bnNew);
-        //    if(newTarget > nProofOfWorkLimit)
-        //        newTarget = nProofOfWorkLimit;
-
-        //    return newTarget;
-        //}
-
-
 		const int nMedianTimeSpan = 11;
 		public DateTimeOffset GetMedianTimePast()
 		{
@@ -322,7 +205,7 @@ namespace LushCoin
 		}
 
 		/// <summary>
-		/// Check PoW and that the blocks connect correctly
+		/// Check EVec and ratification.
 		/// </summary>
 		/// <param name="network">The network being used</param>
 		/// <returns>True if PoW is correct</returns>
@@ -336,21 +219,15 @@ namespace LushCoin
 			var genesisCorrect = Height != 0 || HashBlock == network.GetGenesis().GetHash();
 			var hashPrevCorrect = Height == 0 || Header.HashPrevBlock == Previous.HashBlock;
 			var hashCorrect = HashBlock == Header.GetHash();
-            //var workCorrect = CheckProofOfWorkAndTarget(network);
-            //return heightCorrect && genesisCorrect && hashPrevCorrect && hashCorrect && workCorrect;
-            return heightCorrect && genesisCorrect && hashPrevCorrect && hashCorrect;
+
+            if (Header.Tally == 1) // Block contains an invention or innovation that requires ratification.
+            {
+                bool isRatified = Ratification.IsRatified(this);
+                return heightCorrect && genesisCorrect && hashPrevCorrect && hashCorrect && isRatified;
+            }
+            else // Block does not contain invention or innovation
+                return heightCorrect && genesisCorrect && hashPrevCorrect && hashCorrect;
 		}
-
-        //public bool CheckProofOfWorkAndTarget(Network network)
-        //{
-        //    return CheckProofOfWorkAndTarget(network.Consensus);
-        //}
-
-        //public bool CheckProofOfWorkAndTarget(Consensus consensus)
-        //{
-        //    return Height == 0 || (Header.CheckProofOfWork() && Header.Bits <= GetWorkRequired(consensus));
-        //}
-
 
 		/// <summary>
 		/// Find first common block between two chains
