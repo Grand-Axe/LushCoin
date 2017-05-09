@@ -91,7 +91,7 @@ namespace LushCoin
         uint nTally;
 
         /// <summary>
-        /// Number of inventions or innovations in block. Only one or zero allowed.
+        /// Number of inventions or innovations in block.
         /// </summary>
         public uint Tally
         {

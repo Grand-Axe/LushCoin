@@ -35,6 +35,9 @@
     <DocumentationFile>bin\Release\LushCoin.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DBreeze">
+      <HintPath>..\packages\DBreeze.1.84.0\lib\net45\DBreeze.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -73,9 +76,21 @@
     <Compile Include="BuilderExtensions\P2MultiSigBuilderExtension.cs" />
     <Compile Include="BuilderExtensions\P2PKBuilderExtension.cs" />
     <Compile Include="BuilderExtensions\P2PKHBuilderExtension.cs" />
+    <Compile Include="Community.Extensions\Application.cs" />
+    <Compile Include="Community.Extensions\Community.cs" />
+    <Compile Include="Community.Extensions\CommunityMember.cs" />
+    <Compile Include="Community.Extensions\DataManager.cs" />
+    <Compile Include="Community.Extensions\Edge.cs" />
+    <Compile Include="Community.Extensions\ICommunityGraph.cs" />
+    <Compile Include="Community.Extensions\ICommunityNode.cs" />
+    <Compile Include="Community.Extensions\IMachineReadable.cs" />
+    <Compile Include="Community.Extensions\IntellectualForm.cs" />
+    <Compile Include="Community.Extensions\MarketService.cs" />
+    <Compile Include="Community.Extensions\RandomWalk.cs" />
     <Compile Include="Community.Extensions\Ratification.cs" />
+    <Compile Include="Community.Extensions\Configs.cs" />
     <Compile Include="Consensus.cs" />
-    <Compile Include="Community.Extensions\EVec.cs" />
+    <Compile Include="Community.Extensions\AI\EVec.cs" />
     <Compile Include="FeeRate.cs" />
     <Compile Include="JsonConverters\AssetIdJsonConverter.cs" />
     <Compile Include="JsonConverters\Base58JsonConverter.cs" />
@@ -446,7 +461,9 @@
     <Compile Include="BouncyCastle\util\io\Streams.cs" />
     <Compile Include="BouncyCastle\util\Platform.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Community.Extensions\Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="ChangeLog.txt" />
   </ItemGroup>
