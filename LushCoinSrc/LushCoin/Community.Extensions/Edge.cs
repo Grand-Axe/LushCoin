@@ -10,6 +10,9 @@ namespace LushCoin.Community.Extensions
     {
         public string CommunityKey { get; set; }
         public string ForeignKey { get; set; }
-        public HashSet<int> Bag { get; set; }
+        public int CommunityBagCount { get; set; }
+        public int ForeignBagCount { get; set; }
+        public HashSet<int> CommunityBag { get; set; }
+        public HashSet<int> ForeignBag { get; set; }
     }
 }
