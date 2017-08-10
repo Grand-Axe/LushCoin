@@ -4,9 +4,8 @@ Do read the LushCoin white paper to know where this is going; its in the Docs fo
 
 ## Beta of Concept Hasher
 The core of the AI component, a module that can create unique cryptographic hashes per concept (concept hasher) has been largely completed.
-This beta date of this component was previously announced on bitcointalk.org (https://bitcointalk.org/index.php?topic=1857322.msg19649439) as 26th of June 2017. That date has been moved to the 30th of June due to unforeseen circumstances.
 
-The beta component will be open to sections of the open source and allied communities that are globally recognised as leading.
+The beta component will initially be open only to sections of the open source and allied communities that are globally recognised as leading. For a bit more detail, see the Beta section at http://mindmutiny.com/lushcoin.html#beta (you really should read the page from the top though). 
 
 ### Who is Qualified for the Concept Hasher Beta?
 You must be an individual or body that is:
