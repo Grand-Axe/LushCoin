@@ -1,4 +1,4 @@
-# LushCoin![Logo](Images\logo.png?raw=true)
+# LushCoin![Logo](Images/logo.png?raw=true)
 
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
@@ -57,7 +57,8 @@ The LushCoin model promotes the liberty to know - free transfer and cross-pollin
 11. Its base value will be set on a date defined as the AI Epoch, 00:00:00 UTC on February 26 1996. It will be based on a unit of work derived from hashing the graph of a network centred on [a Mandela speech themed on a united world](#base-unit-anchor).
 12. Litigation over intellectual property will be minimised, because with LushCoin, math methods can be employed to determine the reach and scope of an idea.
 13. Unlike patents and copyright, open source licenses are valid worldwide, therefore LushCoin is *"create once, own everywhere"*.
-14. Innovators (and improvers of their work) will get paid for life (or a heir for the remainder, if the innovator dies before before 90 years - measured from the date of the recording of the concerned innovation). A simplification of the process is illustrated below: ![Overview](Images/overview.png?raw=true)
+14. Innovators (and improvers of their work) will get paid for life (or a heir for the remainder, if the innovator dies before before 90 years - measured from the date of the recording of the concerned innovation). A simplification of the process is illustrated below: <br />
+    ![Overview](Images/overview.png?raw=true)
 
 
 
