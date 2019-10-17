@@ -1,4 +1,4 @@
-# LushCoin![Logo](/Images\logo.png?raw=true)
+# LushCoin![Logo](Images\logo.png?raw=true)
 
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
