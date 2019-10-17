@@ -1,0 +1,3 @@
+# This file holds updates to the ideas in the LushCoin white paper.
+
+1. Innovators (and improvers of their work) will get paid for life (or a heir for the remainder, if the innovator dies before before 90 years - measured from the date of the recording of the concerned innovation)
