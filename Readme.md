@@ -1,6 +1,6 @@
 # LushCoin![Logo](Images/logo.png?raw=true)
 
-DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+<sub>DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
 Copyright (c) 2019 Asame Imoni Obiomah. All rights reserved.
 
@@ -14,15 +14,15 @@ obtain a copy of the License at LICENSE.txt.  See the License for the specific
 language governing permissions and limitations under the License.
 
 When distributing the software, include this License Header Notice in each
-file and include the License file at LICENSE.txt.
-
-
+file and include the License file at LICENSE.txt.</sub>
 
 ### What's LushCoin?
 
-LushCoin is a concept for a publicly owned, open source cryptocurrency that depends on a novel AI method, [OkeuvoLite](https://github.com/Grand-Axe/Okeuvo-Lite)  to first create a unique hash for any idea (regardless of what that idea might be or how its text is expressed) and then generate tokens equivalent to the value of the idea for its funding.
+LushCoin is a concept for a publicly owned, open source cryptocurrency to complement (or replace) the patent system, reward open source innovation and create a viable business model for open source.
 
-The generated hash can be used to determine the originality of a concept and to evaluate its potential contribution to human wellbeing and dignity. This gets done through a consensus system based on novel open source and crowd consensus methods (see the [LushCoin white paper)](https://github.com/Grand-Axe/LushCoin/raw/master/Docs/LushCoinWhitePaper.pdf). <br />Funds will be generated to finance viable original concepts and inventions, taking local feelings and gaps in resources into account.
+It depends on a novel open source AI library, [OkeuvoLite](https://github.com/Grand-Axe/Okeuvo-Lite) to establish the uniqueness of a concept and reduce it to a hash consisting of a set of vectors. LushCoin will then analyse the vectors and generate tokens equivalent to the value of the idea to fund its take-off.
+
+Only concepts that contribute to human wellbeing and dignity will get through, due to a consensus system based on novel open source and crowd consensus methods (as described in the [LushCoin white paper)](https://github.com/Grand-Axe/LushCoin/raw/master/Docs/LushCoinWhitePaper.pdf). <br />Funds will be generated to finance viable original concepts and inventions, taking local feelings and gaps in resources into account.
 
 Currently, an astonishing 97% of patent applications fail - not because they are no good, but because they fail to meet a flawed definition of profit that only takes material gain into account, to the neglect of all other forms of gain. <br />For example; where patents in many areas of climate change and open source will fail for lack of profitability (in the narrow sense of the market definition), a LushCoin project would consider impacts on wellbeing, human dignity, knowledge increase and dissemination ... as well as its ability to generate material gain. <br />For emphasis, despite its obvious benefits to humanity, a breakthrough open source invention of an Antarctic based climate saving device to harmlessly rid the atmosphere off excess carbon dioxide will almost certainly fail in todays material profit only market; whereas it will pass muster in LushCoin - no strings attached.<br />The very same wasteful ethos that see's 97% of patents failing also drives climate change and other lopsided effects.
 
