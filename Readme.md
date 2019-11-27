@@ -1,19 +1,18 @@
 # LushCoin![Logo](Images/logo.png?raw=true)
 
-<sub>DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+<sub>DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.</sub>
 
-Copyright (c) 2019 Asame Imoni Obiomah. All rights reserved.
+<sub>Copyright (c) 2019 Asame Imoni Obiomah. All rights reserved.</sub>
 
-Artificial intelligence ethics is of existential importance.
-The licensing model of LushCoin enforces adherence to a strict ethical code.
+<sub>Artificial intelligence ethics is of existential importance.</sub>
+<sub>The licensing model of LushCoin enforces adherence to a strict ethical code.</sub>
 
-The contents of this file are subject to the terms of both the GNU
-General Public License Version 2 only ("GPL") and Inverse license (collectively, the "License").  You
-may not use this file except in compliance with the License.  You can
+<sub>The contents of this file are subject to the terms of both the GNU
+General Public License Version 2 only ("GPL") and Inverse license (collectively, the "License").  You may not use this file except in compliance with the License.  You can
 obtain a copy of the License at LICENSE.txt.  See the License for the specific
-language governing permissions and limitations under the License.
+language governing permissions and limitations under the License.</sub>
 
-When distributing the software, include this License Header Notice in each
+<sub>When distributing the software, include this License Header Notice in each
 file and include the License file at LICENSE.txt.</sub>
 
 ### What's LushCoin?
