@@ -31,7 +31,11 @@ LushCoin will launch in phases, starting with funding open source developers and
 
 ### Knowledge liberty
 
-The LushCoin model promotes the liberty to know - free transfer and cross-pollination of ideas in an open source ecosystem that rewards innovators. Access to knowledge should be free.<br />
+The LushCoin model promotes the liberty to know - free transfer and cross-pollination of ideas in an open source ecosystem that rewards innovators. Access to knowledge should be free.<br /><br />
+
+### Voting
+
+LushCoin's consensus system will serve as the vote mechanism for [Awesome City](https://github.com/Grand-Axe/Awesome-City).<br />
 
 
 ### Notices
